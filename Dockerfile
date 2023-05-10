@@ -1,15 +1,15 @@
-FROM docker.io/alpine:3.15
+FROM docker.io/alpine:latest
 
-RUN apk --no-cache add ca-certificates=~20211220 \
-    && apk --no-cache add privoxy=~3.0 \
-    && apk --no-cache add openvpn=~2.5 \
-    && apk --no-cache add runit=~2.1 \
-    && apk --no-cache add curl=~7.80 \
-    && apk --no-cache add unzip=~6.0 \
-    && apk --no-cache add wireguard-tools=~1.0 \
-    && apk --no-cache add jq=~1.6 \
-    && apk --no-cache add sudo=~1.9 \
-    && apk --no-cache add coreutils=~9.0
+RUN apk --no-cache add ca-certificates \
+    && apk --no-cache add privoxy \
+    && apk --no-cache add openvpn \
+    && apk --no-cache add runit \
+    && apk --no-cache add curl \
+    && apk --no-cache add unzip \
+    && apk --no-cache add wireguard-tools \
+    && apk --no-cache add jq \
+    && apk --no-cache add sudo \
+    && apk --no-cache add coreutils
 
 COPY app /app
 COPY etc /etc
