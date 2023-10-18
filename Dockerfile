@@ -17,7 +17,7 @@ COPY etc /etc
 RUN find /app -name "run" -exec chmod u+x {} \;
 
 ENV VPN_PROTOCOL="openvpn" \
-    REGION="switzerland" \
+    REGION="" \
     USERNAME="" \
     PASSWORD="" \
     UID="" \

@@ -17,7 +17,6 @@ docker run -d \
 --cap-add=NET_ADMIN \
 --device=/dev/net/tun \
 --name=vpn_proxy \
---dns=209.222.18.218 --dns=209.222.18.222 \
 --restart=always \
 --privileged \
 -e "VPN_PROTOCOL=${VPN_PROTOCOL}" \
@@ -30,7 +29,7 @@ docker run -d \
 -v /etc/localtime:/etc/localtime:ro \
 -v </host/path/to/config>:/config \
 -p 8118:8118 \
-docker.io/act28/pia-openvpn-proxy
+ghcr.io/michaeljones32/pia-openvpn-proxy
 ```
 
 **NOTE**

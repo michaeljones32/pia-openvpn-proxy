@@ -1,15 +1,15 @@
 version: "3.8"
 services:
   vpn_proxy:
-    image: docker.io/act28/pia-openvpn-proxy
+    image: ghcr.io/michaeljones32/pia-openvpn-proxy
     cap_add:
       - MKNOD
       - NET_ADMIN
     devices:
       - /dev/net/tun
     dns:
-      - 209.222.18.218
-      - 209.222.18.222
+      - 1.1.1.1
+      - 1.0.0.1
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${VPN_PROXY_CONFIG}:/config

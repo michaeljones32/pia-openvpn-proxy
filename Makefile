@@ -1,4 +1,4 @@
-DOCKER_REPO := docker.io/act28/pia-openvpn-proxy
+DOCKER_REPO := ghcr.io/michaeljones32/pia-openvpn-proxy
 
 -include .makefiles/Makefile
 -include .makefiles/pkg/docker/v1/Makefile
@@ -16,10 +16,8 @@ OPTS ?= \
 --cap-add=MKNOD \
 --cap-add=NET_ADMIN \
 --device=/dev/net/tun \
---dns=209.222.18.218 --dns=209.222.18.222 --dns=1.1.1.1 --dns=1.0.0.1 --dns=9.9.9.9 --dns=205.204.88.60 \
+--dns=1.1.1.1 --dns=1.0.0.1 --dns=9.9.9.9 \
 --privileged \
-
-#--privileged \
 
 .PHONY: shell run start stop rm release
 
