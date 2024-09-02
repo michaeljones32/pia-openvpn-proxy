@@ -1,4 +1,4 @@
-FROM docker.io/alpine:latest
+FROM alpine:3
 
 RUN apk --no-cache add ca-certificates \
     && apk --no-cache add privoxy \
@@ -11,7 +11,9 @@ RUN apk --no-cache add ca-certificates \
     && apk --no-cache add sudo \
     && apk --no-cache add coreutils
 
-COPY app /app
+COPY app/ovpn /app/ovpn
+COPY app/wg /app/wg
+COPY app/privoxy /app/privoxy
 COPY etc /etc
 
 RUN find /app -name "run" -exec chmod u+x {} \;
